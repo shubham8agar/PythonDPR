@@ -1,3 +1,5 @@
+# Move the even number in the end .
+
 nums=[3, 8, 5, 13, 6, 12, 4, 1]
 n= len(nums)
 

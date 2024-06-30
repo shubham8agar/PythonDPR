@@ -1,3 +1,5 @@
+# Given an array [1,2,3,4,1,5] create 2 boolean string represent whether the element present in right or left side for this given input output will be [000010,100000]
+
 # Example usage
 nums = [1, 2, 3, 4, 1, 5]
 n = len(nums)

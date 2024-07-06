@@ -19,15 +19,25 @@ n = len(string1)
 K = 5
 
 count = 0
+left = 0
+new_set = set()
 
-for i in range(0,n-K+1):
-    new_set = set()
-    new_set.add(string1[i])
-    for j in range(i+1,i+K):
-        new_set.add(string1[j])
-    if len(new_set) == 5:
-        # print(new_set)
+
+for right in range(n):
+    while string1[right] in new_set:   
+        new_set.remove(string1[left])
+        left += 1
+
+    new_set.add(string1[right])   
+
+    if (right - left + 1) == K:
         count += 1
+        new_set.remove(string1[left])
+        left += 1
 
 print(count)
-        
+
+# Sliding Window Logic:
+
+# When a repeated character is found, it's not enough to remove just one instance; all instances up to the current character's previous occurrence must be removed.
+# Using if would only remove the character once, which might not be sufficient to eliminate all duplicates within the window.
